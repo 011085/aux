@@ -12,7 +12,7 @@ function preload(){
     cnv.mouseClicked(togglePlay);
     fft = new p5.FFT();
     sound.amp(0.6);
-    rectMode(CENTER);
+    
   }
   
   function windowResized() {
@@ -41,9 +41,10 @@ function preload(){
     //beginShape();
     stroke(255, 120);
 
-    for (let i = 0; i < waveform.length; i+=190){
-      strokeWeight(0.5);
-      rect(width/2, height/2, waveform[i]*random(1500)-mouseX, waveform[1]*random(1500)-mouseY);
+    for (let i = 0; i < waveform.length; i+=10){
+      strokeWeight(1.5);
+      ellipse(width/2, height/2, waveform[i]*i*9-mouseX, waveform[i]*i*9+mouseX);
+      
     }
     //endShape();
     stroke(255);
